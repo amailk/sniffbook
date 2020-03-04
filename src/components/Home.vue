@@ -1,20 +1,14 @@
 <template>
     <div>
-        <b-navbar>
+        <b-navbar class="navbar">
             <template slot="brand">
                 <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                    <img
+                    <img class="logo-top"
                         src="../assets/logo.png"
                         alt="Sniffbook logo"
                     >
                 </b-navbar-item>
             </template>
-            <template slot="start">
-                <b-navbar-item href="#">
-                    Home
-                </b-navbar-item>
-            </template>
-
             <template slot="end">
                 <b-navbar-item tag="div">
                     <div class="buttons">

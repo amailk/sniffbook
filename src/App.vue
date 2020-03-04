@@ -30,6 +30,14 @@ export default {
       "danger": ($danger, $danger-invert),
       "twitter": ($twitter, $twitter-invert)
   );
+  nav.navbar {
+    height: 4rem !important;
+  }
+  img.logo-top {
+    min-height: 90px;
+    padding-top: 5px;
+  }
+
   // Links
   $link: $primary;
   $link-invert: $primary-invert;
