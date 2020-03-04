@@ -58,7 +58,7 @@
                             <figure class="image is-square">
                                 <img src="../assets/post1.jpg">
                             </figure>
-                            <p class="text">2019 Jan 15</p>
+                            <p class="text">02 Jan 2020</p>
                         </article>
                     </div>
                     <div class="tile">
@@ -67,6 +67,7 @@
                             <figure class="image is-square">
                                 <img src="../assets/post2.jpg">
                             </figure>
+                            <p class="text">15 Jan 2020</p>
                         </article>
                     </div>
                     <div class="tile">
@@ -75,6 +76,7 @@
                             <figure class="image is-square">
                                 <img src="../assets/post3.jpg">
                             </figure>
+                            <p class="text">20 Feb 2020</p>
                         </article>
                     </div>
                 </div>
