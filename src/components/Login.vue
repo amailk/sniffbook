@@ -1,6 +1,11 @@
 <template>
     <div class="columns is-vcentered is-centered">
         <div class="column is-one-third">
+
+            <figure class="image is-3by1">
+                <img src="../assets/logo.png">
+            </figure>
+
             <b-field label="Username"
                 type="is-success"
                 message="This username is available">
