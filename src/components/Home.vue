@@ -34,7 +34,7 @@
                 <div class="columns">
                     <div class="column is-one-fifth">
                         <figure class="image is-150x150">
-                            <img class="is-rounded" src="../assets/profile.png">
+                            <img class="is-rounded" src="../assets/profile.jpg">
                         </figure>
                     </div>
                     <div class="column">
