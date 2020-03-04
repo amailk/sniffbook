@@ -65,7 +65,7 @@
                         <!-- Add content or other tiles -->
                         <article class="tile is-child box">
                             <figure class="image is-square">
-                                <img src="../assets/post2.png">
+                                <img src="../assets/post2.jpg">
                             </figure>
                         </article>
                     </div>
@@ -73,7 +73,7 @@
                         <!-- Add content or other tiles -->
                         <article class="tile is-child box">
                             <figure class="image is-square">
-                                <img src="../assets/post3.png">
+                                <img src="../assets/post3.jpg">
                             </figure>
                         </article>
                     </div>
