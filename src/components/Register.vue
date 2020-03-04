@@ -2,6 +2,10 @@
     <div class="columns is-centered">
         <div class="column is-one-third">
 
+            <figure class="image is-3by1">
+                <img src="../assets/logo.png">
+            </figure>
+
             <b-field label="Name" :label-position="labelPosition">
                 <b-input value="Kevin Garvey"></b-input>
             </b-field>
