@@ -81,11 +81,36 @@
             </b-tab-item>
 
             <b-tab-item label="Events">
-                Lorem <br>
-                ipsum <br>
-                dolor <br>
-                sit <br>
-                amet.
+                <div class="list is-hoverable">
+
+                    <a class="list-item">
+                        <div class="content">
+                            <p class="title is-5">Event Name</p>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        </div>
+                    </a>
+
+                    <a class="list-item">
+                        <div class="content">
+                            <p class="title is-5">Event Name</p>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        </div>
+                    </a>
+
+                    <a class="list-item">
+                        <div class="content">
+                            <p class="title is-5">Event Name</p>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        </div>
+                    </a>
+
+                    <a class="list-item">
+                        <div class="content">
+                            <p class="title is-5">Event Name</p>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        </div>
+                    </a>
+                </div>
             </b-tab-item>
 
             <b-tab-item label="Adventures">
