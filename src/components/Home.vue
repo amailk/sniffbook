@@ -18,12 +18,16 @@
             <template slot="end">
                 <b-navbar-item tag="div">
                     <div class="buttons">
-                        <a class="button is-primary">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                            Log in
-                        </a>
+                        <b-button tag="router-link"
+                            to="/register"
+                            type="is-primary">
+                            Register
+                        </b-button>
+                        <b-button tag="router-link"
+                            to="/login"
+                            type="is-light">
+                            Login
+                        </b-button>
                     </div>
                 </b-navbar-item>
             </template>
