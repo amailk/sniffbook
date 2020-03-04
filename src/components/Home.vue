@@ -87,29 +87,29 @@
 
                     <a class="list-item">
                         <div class="content">
-                            <p class="title is-5">Event Name</p>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <p class="title is-5">Golden Retreiver Meetup</p>
+                            <time datetime="2016-1-1">2:00 PM - 20 Jan 2020</time>
                         </div>
                     </a>
 
                     <a class="list-item">
                         <div class="content">
-                            <p class="title is-5">Event Name</p>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <p class="title is-5">Puppy Training</p>
+                            <time datetime="2016-1-1">5:00 PM - 24 Feb 2020</time>
                         </div>
                     </a>
 
                     <a class="list-item">
                         <div class="content">
-                            <p class="title is-5">Event Name</p>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <p class="title is-5">Puppy Socialization</p>
+                            <time datetime="2016-1-1">12:00 PM - 20 Mar 2020</time>
                         </div>
                     </a>
 
                     <a class="list-item">
                         <div class="content">
-                            <p class="title is-5">Event Name</p>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <p class="title is-5">March Break Dog Meetup</p>
+                            <time datetime="2016-1-1">9:00 AM - 21 Mar 2020</time>
                         </div>
                     </a>
                 </div>
