@@ -1,5 +1,8 @@
 # sniffbook
 
+## Description
+Socialization is an integral part of a dog's life. Sniffbook is a social networking web application that helps dog owners with socializing their dog. You can create posts, connect with other dogs/dog owners, arrange play dates, create and attend events and more.
+
 ## Project setup
 ```
 npm install
