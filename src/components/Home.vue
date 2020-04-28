@@ -48,12 +48,29 @@
         </section>
 
         <section>
-            <button class="button is-primary is-medium" @click="isNewEventModalActive = true">
+            <button class="button is-primary is-medium" @click="isNewPostModalActive = true">
+                New Post
+            </button>
+
+            <b-modal :active.sync="isNewPostModalActive"
+                    has-modal-card
+                    full-screen
+                    trap-focus
+                    :destroy-on-hide="false"
+                    aria-role="dialog"
+                    aria-modal>
+                <new-post/>
+            </b-modal>
+        </section>
+
+        <section>
+            <button class="button is-primary is-medium is-outline" @click="isNewEventModalActive = true">
                 New Event
             </button>
 
             <b-modal :active.sync="isNewEventModalActive"
                     has-modal-card
+                    full-screen
                     trap-focus
                     :destroy-on-hide="false"
                     aria-role="dialog"
@@ -97,6 +114,7 @@
 
 import Post from './Post.vue'
 import NewEvent from './NewEvent.vue'
+import NewPost from './NewPost.vue'
 
 import { db } from '../firebase'
 import { storage } from '../firebase'
@@ -113,6 +131,7 @@ export default {
             numColumns: numColumns,
             events: null,
             isNewEventModalActive: false,
+            isNewPostModalActive: false,
         }
     },
 
@@ -133,6 +152,7 @@ export default {
     components: {
         Post,
         NewEvent,
+        NewPost,
     },
 
     computed: {
