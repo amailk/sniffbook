@@ -47,6 +47,21 @@
             </div>
         </section>
 
+        <section>
+            <button class="button is-primary is-medium" @click="isNewEventModalActive = true">
+                New Event
+            </button>
+
+            <b-modal :active.sync="isNewEventModalActive"
+                    has-modal-card
+                    trap-focus
+                    :destroy-on-hide="false"
+                    aria-role="dialog"
+                    aria-modal>
+                <new-event/>
+            </b-modal>
+        </section>
+
         <b-tabs v-model="activeTab">
             <b-tab-item label="Posts">
                 <span v-for="row in numRows" v-bind:key="row">
@@ -62,7 +77,7 @@
             <b-tab-item label="Events">
                 <div class="list is-hoverable">
 
-                    <a class="list-item" v-for="event in events" v-bind:key="event">
+                    <a class="list-item" v-for="event in events" v-bind:key="event.title">
                         <div class="content">
                             <p class="title is-5">{{ event.title }}</p>
                             <time datetime="2016-1-1">{{ event.time }}  - {{ event.date }}</time>
@@ -81,6 +96,7 @@
 <script>
 
 import Post from './Post.vue'
+import NewEvent from './NewEvent.vue'
 
 import { db } from '../firebase'
 import { storage } from '../firebase'
@@ -96,6 +112,7 @@ export default {
             profilePhotoUrl: '',
             numColumns: numColumns,
             events: null,
+            isNewEventModalActive: false,
         }
     },
 
@@ -115,6 +132,7 @@ export default {
 
     components: {
         Post,
+        NewEvent,
     },
 
     computed: {
@@ -139,7 +157,7 @@ export default {
             console.log("Row ", row)
             console.log(result)
             return result
-        }
+        },
     },
 }
 </script>
