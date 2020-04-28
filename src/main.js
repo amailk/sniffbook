@@ -4,11 +4,15 @@ import Buefy from 'buefy'
 
 import App from './App.vue'
 
-import routes from './routes';
+import routes from './routes'
+
+import { rtdbPlugin } from 'vuefire'
+
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter)
 Vue.use(Buefy)
+Vue.use(rtdbPlugin)
 
 const router = new VueRouter({mode: 'history', routes})
 

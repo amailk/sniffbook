@@ -32,15 +32,15 @@
                 <div class="columns">
                     <div class="column is-one-fifth">
                         <figure class="image is-150x150">
-                            <img class="is-rounded" src="../assets/profile.jpg">
+                            <img class="is-rounded" :src="profilePhotoUrl">
                         </figure>
                     </div>
                     <div class="column">
                         <h1 class="title">
-                            Felix  
+                            {{ userData.name }}  
                         </h1>
                         <h2 class="subtitle">
-                            Kitchener, ON
+                            {{ userData.city }}, {{ userData.province }}
                         </h2>
                     </div>
                 </div>
@@ -121,7 +121,31 @@
 </template>
 
 <script>
+
+import { db } from '../firebase'
+import { storage } from '../firebase'
+
+const userId = "user_id1"
+
 export default {
-    
+    data() {
+        return {
+            userData: {},
+            profilePhotoUrl: '',
+        }
+    },
+
+    firebase: {
+        userData: db.ref('users').child(userId).child("user_data"),
+    },
+
+    watch: {
+        userData: function() {
+            storage.ref().child(this.userData.profileImage).getDownloadURL().then(downloadURL => {
+                this.profilePhotoUrl = downloadURL
+                // this.$emit('profilePhotoUrl', this.profilePhotoUrl)
+            })
+        }
+    },
 }
 </script>
