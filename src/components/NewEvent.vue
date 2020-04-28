@@ -30,19 +30,30 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                title: 'John Silver',
-                date: new Date(),
-                time: new Date(),
-            }
-        },
 
-        methods: {
-            createEvent: function() {
-                console.log("Creating event")
-            }
+import { db } from '../firebase'
+
+export default {
+    data() {
+        return {
+            title: 'My Event Title',
+            date: new Date(),
+            time: new Date(),
+        }
+    },
+
+    methods: {
+        createEvent: function() {
+            db.ref('events').push(
+                {
+                    title: this.title,
+                    date: this.date.toISOString().slice(0,10).replace(/-/g,"/"),
+                    time: this.time.toLocaleTimeString(),
+                }
+            )
+
+            this.$parent.close()
         }
     }
+}
 </script>
