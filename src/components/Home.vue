@@ -62,33 +62,12 @@
             <b-tab-item label="Events">
                 <div class="list is-hoverable">
 
-                    <a class="list-item">
+                    <a class="list-item" v-for="event in events" v-bind:key="event">
                         <div class="content">
-                            <p class="title is-5">Golden Retreiver Meetup</p>
-                            <time datetime="2016-1-1">2:00 PM - 20 Jan 2020</time>
+                            <p class="title is-5">{{ event.title }}</p>
+                            <time datetime="2016-1-1">{{ event.time }}  - {{ event.date }}</time>
                         </div>
-                    </a>
-
-                    <a class="list-item">
-                        <div class="content">
-                            <p class="title is-5">Puppy Training</p>
-                            <time datetime="2016-1-1">5:00 PM - 24 Feb 2020</time>
-                        </div>
-                    </a>
-
-                    <a class="list-item">
-                        <div class="content">
-                            <p class="title is-5">Puppy Socialization</p>
-                            <time datetime="2016-1-1">12:00 PM - 20 Mar 2020</time>
-                        </div>
-                    </a>
-
-                    <a class="list-item">
-                        <div class="content">
-                            <p class="title is-5">March Break Dog Meetup</p>
-                            <time datetime="2016-1-1">9:00 AM - 21 Mar 2020</time>
-                        </div>
-                    </a>
+                    </a>    
                 </div>
             </b-tab-item>
 
@@ -116,12 +95,14 @@ export default {
             posts: null,
             profilePhotoUrl: '',
             numColumns: numColumns,
+            events: null,
         }
     },
 
     firebase: {
         posts: db.ref('users').child(userId).child("posts"),
         userData: db.ref('users').child(userId).child("user_data"),
+        events: db.ref('events')
     },
 
     watch: {
