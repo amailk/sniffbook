@@ -49,35 +49,14 @@
 
         <b-tabs v-model="activeTab">
             <b-tab-item label="Posts">
-                <div class="tile is-ancestor">
-                    <div class="tile">
-                        <!-- Add content or other tiles -->
-                        <article class="tile is-child box">
-                            <figure class="image is-square">
-                                <img src="../assets/post1.jpg">
-                            </figure>
-                            <p class="text">02 Jan 2020</p>
-                        </article>
+                <span v-for="row in numRows" v-bind:key="row">
+                    <div class="tile is-ancestor">
+                        <post
+                            v-for="postId in postsForRow(row)"
+                            v-bind:postId="postId"
+                            v-bind:key="postId" />
                     </div>
-                    <div class="tile">
-                        <!-- Add content or other tiles -->
-                        <article class="tile is-child box">
-                            <figure class="image is-square">
-                                <img src="../assets/post2.jpg">
-                            </figure>
-                            <p class="text">15 Jan 2020</p>
-                        </article>
-                    </div>
-                    <div class="tile">
-                        <!-- Add content or other tiles -->
-                        <article class="tile is-child box">
-                            <figure class="image is-square">
-                                <img src="../assets/post3.jpg">
-                            </figure>
-                            <p class="text">20 Feb 2020</p>
-                        </article>
-                    </div>
-                </div>
+                </span>        
             </b-tab-item>
 
             <b-tab-item label="Events">
@@ -122,20 +101,26 @@
 
 <script>
 
+import Post from './Post.vue'
+
 import { db } from '../firebase'
 import { storage } from '../firebase'
 
 const userId = "user_id1"
+const numColumns = 3
 
 export default {
     data() {
         return {
             userData: {},
+            posts: null,
             profilePhotoUrl: '',
+            numColumns: numColumns,
         }
     },
 
     firebase: {
+        posts: db.ref('users').child(userId).child("posts"),
         userData: db.ref('users').child(userId).child("user_data"),
     },
 
@@ -143,8 +128,36 @@ export default {
         userData: function() {
             storage.ref().child(this.userData.profileImage).getDownloadURL().then(downloadURL => {
                 this.profilePhotoUrl = downloadURL
-                // this.$emit('profilePhotoUrl', this.profilePhotoUrl)
             })
+        }
+    },
+
+    components: {
+        Post,
+    },
+
+    computed: {
+        numRows: function() {
+            if (this.posts) {
+                return Math.ceil(this.posts.length / numColumns)
+            } else {
+                return 1
+            }
+        }
+    },
+
+    methods: {
+        postsForRow: function(row) {
+            let result = []
+            if (this.posts) {
+                for(var i = numColumns * (row-1); i < numColumns * (row); i++) {
+                    if (i >= this.posts.length) break
+                    result.push(this.posts[i])
+                }
+            }
+            console.log("Row ", row)
+            console.log(result)
+            return result
         }
     },
 }
