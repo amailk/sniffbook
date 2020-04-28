@@ -13,6 +13,7 @@
                     <b-datepicker
                         placeholder="Click to select..."
                         icon="calendar-today"
+                        inline
                         trap-focus>
                     </b-datepicker>
                 </b-field>

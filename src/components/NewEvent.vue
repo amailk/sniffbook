@@ -10,21 +10,15 @@
             </b-field>
 
             <b-field label="Select a date">
-                <b-datepicker
-                    placeholder="Click to select..."
-                    icon="calendar-today"
-                    trap-focus>
+                <b-datepicker v-model="date" 
+                    inline>
                 </b-datepicker>
             </b-field>
 
-            <b-field label="Select time">
-                <b-timepicker
-                    rounded
-                    placeholder="Click to select..."
-                    icon="clock"
-                    :hour-format="12">
-                </b-timepicker>
+            <b-field label="Select a time">
+                <b-timepicker v-model="time" inline hour-format="12"></b-timepicker>
             </b-field>
+
 
         </section>
 
@@ -39,7 +33,9 @@
     export default {
         data() {
             return {
-                name: 'John Silver'
+                title: 'John Silver',
+                date: new Date(),
+                time: new Date(),
             }
         },
 

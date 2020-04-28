@@ -54,7 +54,6 @@
 
             <b-modal :active.sync="isNewPostModalActive"
                     has-modal-card
-                    full-screen
                     trap-focus
                     :destroy-on-hide="false"
                     aria-role="dialog"
@@ -70,7 +69,6 @@
 
             <b-modal :active.sync="isNewEventModalActive"
                     has-modal-card
-                    full-screen
                     trap-focus
                     :destroy-on-hide="false"
                     aria-role="dialog"
