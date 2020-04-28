@@ -58,7 +58,7 @@
                     :destroy-on-hide="false"
                     aria-role="dialog"
                     aria-modal>
-                <new-post/>
+                <new-post :userId="userId" :postIndex="numPosts"/>
             </b-modal>
         </section>
 
@@ -130,6 +130,7 @@ export default {
             events: null,
             isNewEventModalActive: false,
             isNewPostModalActive: false,
+            userId: userId,
         }
     },
 
@@ -159,6 +160,13 @@ export default {
                 return Math.ceil(this.posts.length / numColumns)
             } else {
                 return 1
+            }
+        },
+        numPosts: function() {
+            if (this.posts) {
+                return this.posts.length
+            } else {
+                return 0
             }
         }
     },
